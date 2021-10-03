@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hit.wav-3d7bd07bdbd3b5c8f69820c1f51a6896.sample"
+
+[deps]
+
+source_file="res://Images/Music and Sounds/Hit.wav"
+dest_files=[ "res://.import/Hit.wav-3d7bd07bdbd3b5c8f69820c1f51a6896.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

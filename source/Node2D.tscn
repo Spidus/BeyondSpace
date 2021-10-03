@@ -1,0 +1,511 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://bush_scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/World/astronaut_sprite_complete.png" type="Texture" id=2]
+[ext_resource path="res://source/Player.gd" type="Script" id=3]
+[ext_resource path="res://source/World/back_ground.png" type="Texture" id=4]
+[ext_resource path="res://painel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/World/planta1.png" type="Texture" id=6]
+[ext_resource path="res://source/World/pedra1.png" type="Texture" id=7]
+[ext_resource path="res://source/World/pedra3.png" type="Texture" id=8]
+[ext_resource path="res://source/World/pc1.png" type="Texture" id=9]
+[ext_resource path="res://source/World/pc3.png" type="Texture" id=10]
+[ext_resource path="res://source/World/pc2.png" type="Texture" id=11]
+[ext_resource path="res://source/World/pedra2.png" type="Texture" id=12]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 0.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idelnaut"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.1
+
+[sub_resource type="Animation" id=4]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Rundown"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 19, 20, 21, 22, 23, 18 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 8, 9, 10, 11, 6 ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8464, 5088 )
+scale = Vector2( 34.0806, 20.3871 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 496, 496 )
+
+[node name="planta1" type="Sprite" parent="."]
+position = Vector2( 192, 176 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+offset = Vector2( 179, -70.5 )
+
+[node name="planta2" type="Sprite" parent="."]
+position = Vector2( 192, 176 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+offset = Vector2( 272, -64 )
+
+[node name="planta3" type="Sprite" parent="."]
+position = Vector2( 192, 176 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+offset = Vector2( 176, 32 )
+
+[node name="planta4" type="Sprite" parent="."]
+position = Vector2( 192, 176 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+offset = Vector2( 368, 0 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 152, 72 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="YSort/KinematicBody2D"]
+position = Vector2( -0.285553, 0.0661011 )
+texture = ExtResource( 2 )
+hframes = 12
+vframes = 9
+frame = 81
+region_enabled = true
+region_rect = Rect2( -6.08229, 0.721622, 383.728, 302.171 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/KinematicBody2D"]
+position = Vector2( 0, 8 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/KinematicBody2D"]
+anims/Idelnaut = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+"anims/New Anim" = SubResource( 4 )
+anims/Rundown = SubResource( 5 )
+anims/runleft = SubResource( 6 )
+anims/up = SubResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/KinematicBody2D"]
+current = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort"]
+
+[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 72, 48 )
+
+[node name="StaticBody2D3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 304, 768 )
+
+[node name="StaticBody2D4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1392, 696 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 184, 80 )
+
+[node name="StaticBody2D" parent="StaticBody2D" instance=ExtResource( 5 )]
+position = Vector2( 32, 0 )
+
+[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource( 5 )]
+position = Vector2( 0, -40 )
+
+[node name="StaticBody2D3" parent="StaticBody2D" instance=ExtResource( 5 )]
+position = Vector2( 32, -40 )
+
+[node name="pc3" type="Sprite" parent="."]
+position = Vector2( 385.75, 224 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="planta1" type="Sprite" parent="pc3"]
+position = Vector2( 188.5, -48 )
+texture = ExtResource( 6 )
+
+[node name="planta2" type="Sprite" parent="pc3"]
+position = Vector2( 92.5, 64 )
+texture = ExtResource( 6 )
+
+[node name="planta3" type="Sprite" parent="pc3"]
+position = Vector2( -147.5, 32 )
+texture = ExtResource( 6 )
+
+[node name="planta4" type="Sprite" parent="pc3"]
+position = Vector2( 220.5, 112 )
+texture = ExtResource( 6 )
+
+[node name="planta5" type="Sprite" parent="pc3"]
+position = Vector2( -51.5, 128 )
+texture = ExtResource( 6 )
+
+[node name="planta6" type="Sprite" parent="pc3"]
+position = Vector2( -195.5, 128 )
+texture = ExtResource( 6 )
+
+[node name="planta7" type="Sprite" parent="pc3"]
+position = Vector2( 172.5, 16 )
+texture = ExtResource( 6 )
+
+[node name="planta8" type="Sprite" parent="pc3"]
+position = Vector2( 76.5, -96 )
+texture = ExtResource( 6 )
+
+[node name="planta9" type="Sprite" parent="pc3"]
+position = Vector2( 188.5, 192 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" parent="pc3" instance=ExtResource( 5 )]
+position = Vector2( -83.5, 0 )
+
+[node name="pedra1" type="Sprite" parent="pc3"]
+position = Vector2( 364.5, 144 )
+texture = ExtResource( 7 )
+
+[node name="pedra2" type="Sprite" parent="pc3"]
+position = Vector2( -579.5, 80 )
+texture = ExtResource( 12 )
+
+[node name="pedra3" type="Sprite" parent="pc3"]
+position = Vector2( -467.5, 96 )
+texture = ExtResource( 8 )
+
+[node name="pedra4" type="Sprite" parent="pc3"]
+position = Vector2( -339.5, -64 )
+texture = ExtResource( 7 )
+
+[node name="pedra5" type="Sprite" parent="pc3"]
+position = Vector2( -531.5, -32 )
+texture = ExtResource( 12 )
+
+[node name="pedra6" type="Sprite" parent="pc3"]
+position = Vector2( -179.5, 256 )
+texture = ExtResource( 8 )
+
+[node name="pedra7" type="Sprite" parent="pc3"]
+position = Vector2( 268.5, 304 )
+texture = ExtResource( 12 )
+
+[node name="pedra8" type="Sprite" parent="pc3"]
+position = Vector2( -435.5, 272 )
+texture = ExtResource( 7 )
+
+[node name="pedra9" type="Sprite" parent="pc3"]
+position = Vector2( 524.5, 224 )
+texture = ExtResource( 8 )
+
+[node name="pedra10" type="Sprite" parent="pc3"]
+position = Vector2( 396.5, -16 )
+texture = ExtResource( 7 )
+
+[node name="pedra11" type="Sprite" parent="pc3"]
+position = Vector2( 300.5, -160 )
+texture = ExtResource( 12 )
+
+[node name="pedra12" type="Sprite" parent="pc3"]
+position = Vector2( 140.5, -240 )
+texture = ExtResource( 8 )
+
+[node name="pedra13" type="Sprite" parent="pc3"]
+position = Vector2( -3.5, -288 )
+texture = ExtResource( 7 )
+
+[node name="planta10" type="Sprite" parent="pc3"]
+position = Vector2( 28.5, 176 )
+texture = ExtResource( 6 )
+
+[node name="pc3" type="Sprite" parent="pc3"]
+position = Vector2( 716.5, 624 )
+texture = ExtResource( 10 )
+
+[node name="pc4" type="Sprite" parent="pc3"]
+position = Vector2( 1084.5, 624 )
+texture = ExtResource( 10 )
+
+[node name="planta11" type="Sprite" parent="pc3"]
+position = Vector2( 540.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta12" type="Sprite" parent="pc3"]
+position = Vector2( 588.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta13" type="Sprite" parent="pc3"]
+position = Vector2( 652.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta14" type="Sprite" parent="pc3"]
+position = Vector2( 716.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta15" type="Sprite" parent="pc3"]
+position = Vector2( 780.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta16" type="Sprite" parent="pc3"]
+position = Vector2( 844.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta17" type="Sprite" parent="pc3"]
+position = Vector2( 908.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta18" type="Sprite" parent="pc3"]
+position = Vector2( 972.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta19" type="Sprite" parent="pc3"]
+position = Vector2( 1036.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta20" type="Sprite" parent="pc3"]
+position = Vector2( 1084.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta21" type="Sprite" parent="pc3"]
+position = Vector2( 1132.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta22" type="Sprite" parent="pc3"]
+position = Vector2( 1180.5, 496 )
+texture = ExtResource( 6 )
+
+[node name="planta23" type="Sprite" parent="pc3"]
+position = Vector2( 537.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta24" type="Sprite" parent="pc3"]
+position = Vector2( 585.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta25" type="Sprite" parent="pc3"]
+position = Vector2( 649.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta26" type="Sprite" parent="pc3"]
+position = Vector2( 713.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta27" type="Sprite" parent="pc3"]
+position = Vector2( 777.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta28" type="Sprite" parent="pc3"]
+position = Vector2( 841.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta29" type="Sprite" parent="pc3"]
+position = Vector2( 905.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta30" type="Sprite" parent="pc3"]
+position = Vector2( 969.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta31" type="Sprite" parent="pc3"]
+position = Vector2( 1033.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta32" type="Sprite" parent="pc3"]
+position = Vector2( 1081.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta33" type="Sprite" parent="pc3"]
+position = Vector2( 1129.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta34" type="Sprite" parent="pc3"]
+position = Vector2( 1177.5, 521.5 )
+texture = ExtResource( 6 )
+
+[node name="planta35" type="Sprite" parent="pc3"]
+position = Vector2( 537.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta36" type="Sprite" parent="pc3"]
+position = Vector2( 585.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta37" type="Sprite" parent="pc3"]
+position = Vector2( 649.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta38" type="Sprite" parent="pc3"]
+position = Vector2( 713.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta39" type="Sprite" parent="pc3"]
+position = Vector2( 777.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta40" type="Sprite" parent="pc3"]
+position = Vector2( 841.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta41" type="Sprite" parent="pc3"]
+position = Vector2( 905.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta42" type="Sprite" parent="pc3"]
+position = Vector2( 969.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta43" type="Sprite" parent="pc3"]
+position = Vector2( 1033.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta44" type="Sprite" parent="pc3"]
+position = Vector2( 1081.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta45" type="Sprite" parent="pc3"]
+position = Vector2( 1129.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta46" type="Sprite" parent="pc3"]
+position = Vector2( 1177.5, 553.5 )
+texture = ExtResource( 6 )
+
+[node name="planta47" type="Sprite" parent="pc3"]
+position = Vector2( 537.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="pc1" type="Sprite" parent="pc3/planta47"]
+position = Vector2( 1315, 454.5 )
+texture = ExtResource( 9 )
+
+[node name="planta48" type="Sprite" parent="pc3"]
+position = Vector2( 585.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta49" type="Sprite" parent="pc3"]
+position = Vector2( 649.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta50" type="Sprite" parent="pc3"]
+position = Vector2( 713.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta51" type="Sprite" parent="pc3"]
+position = Vector2( 777.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta52" type="Sprite" parent="pc3"]
+position = Vector2( 841.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta53" type="Sprite" parent="pc3"]
+position = Vector2( 905.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta54" type="Sprite" parent="pc3"]
+position = Vector2( 969.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta55" type="Sprite" parent="pc3"]
+position = Vector2( 1033.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta56" type="Sprite" parent="pc3"]
+position = Vector2( 1081.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta57" type="Sprite" parent="pc3"]
+position = Vector2( 1129.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="planta58" type="Sprite" parent="pc3"]
+position = Vector2( 1177.5, 585.5 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D2" parent="pc3" instance=ExtResource( 5 )]
+position = Vector2( 636.5, 688 )
+
+[node name="StaticBody2D3" parent="pc3" instance=ExtResource( 5 )]
+position = Vector2( 1020.5, 704 )
+
+[node name="StaticBody2D4" parent="pc3" instance=ExtResource( 5 )]
+position = Vector2( 1100.5, 704 )
+
+[node name="StaticBody2D5" parent="pc3" instance=ExtResource( 5 )]
+position = Vector2( 732.5, 688 )
+
+[node name="pc2" type="Sprite" parent="."]
+position = Vector2( 1290.01, 746.001 )
+scale = Vector2( 0.880706, 0.52684 )
+texture = ExtResource( 11 )
